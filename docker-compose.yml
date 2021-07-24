@@ -1,0 +1,18 @@
+version: '3'
+
+networks:
+  fronetnd:
+    name: fronetnd
+    driver: bridge
+
+services:
+  frontend:
+    init: true
+    image: docker.io/newjett0617/realworld:frontend-compose
+    container_name: frontend
+    networks:
+      - fronetnd
+    expose:
+      - 80
+    ports:
+      - 127.0.0.1:80:80
